@@ -146,7 +146,9 @@ class FlCountryCodePicker {
     ShapeBorder shape = _kShape,
     Color backgroundColor = _kBackgroundColor,
     Color barrierColor = _kBarrierColor,
+    Color textTileColor = Colors.white,
     Clip? clipBehavior = Clip.hardEdge,
+    
   }) async {
     final fullScreenHeight = MediaQuery.of(context).size.height;
     final allowance = MediaQuery.of(context).padding.top -
@@ -192,6 +194,7 @@ class FlCountryCodePicker {
         filteredCountries: filteredCountries,
         searchBarDecoration: searchBarDecoration,
         focusedCountry: focusedCountry,
+        textTileColor : textTileColor,
       ),
     );
 
