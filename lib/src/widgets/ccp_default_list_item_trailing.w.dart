@@ -13,10 +13,13 @@ class CcpDefaultListItemTrailing extends StatelessWidget {
     required this.favorites,
     required this.showDialCode,
     required this.showFavoritesIcon,
+    required this.textTileColor,
   }) : super(key: key);
 
   /// {@macro code}
   final CountryCode code;
+  
+  final Color textTileCorlor;
 
   /// {@macro favorites}
   final List<String> favorites;
@@ -41,14 +44,14 @@ class CcpDefaultListItemTrailing extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            if (showDialCode) Text(code.dialCode) else const SizedBox(),
+            if (showDialCode) Text(code.dialCode, style : TextStyle(color:textTileColor)) else const SizedBox(),
             if (showFavoritesIcon)
               if (index != -1) icon,
           ],
         ),
       );
     } else {
-      return showDialCode ? Text(code.dialCode) : const SizedBox();
+      return showDialCode ? Text(code.dialCode, style : TextStyle(color:textTileColor)) : const SizedBox();
     }
   }
 }
