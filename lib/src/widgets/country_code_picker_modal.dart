@@ -19,6 +19,7 @@ class CountryCodePickerModal extends StatefulWidget {
     required this.showSearchBar,
     required this.showDialCode,
     required this.showFavoritesIcon,
+    required this.textTileColor,
     this.title,
     this.focusedCountry,
     this.searchBarDecoration,
@@ -28,6 +29,8 @@ class CountryCodePickerModal extends StatefulWidget {
 
   /// {@macro favorites}
   final List<String> favorites;
+  
+  final Color texTileColor;
 
   /// {@macro filtered_countries}
   final List<String> filteredCountries;
@@ -166,6 +169,7 @@ class _CountryCodePickerModalState extends State<CountryCodePickerModal> {
                   favorites: widget.favorites,
                   showDialCode: widget.showDialCode,
                   showFavoritesIcon: widget.showFavoritesIcon,
+                  textTileColor :widget.textTileColor,
                 ),
               );
             },
